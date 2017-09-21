@@ -1,5 +1,5 @@
 <?php
-namespace SeoBroweb;
+namespace SeoBroweb\YandexMetrikaApi;
 /*The MIT License (MIT)
 
 Copyright (c) 2014 webjeyros(webjeyros@gmail.com)
