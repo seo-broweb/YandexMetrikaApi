@@ -1,0 +1,14 @@
+{
+  "name": "seo-broweb/YandexMetrikaApi",
+  "description": "Sdk для обращения к апи яндекс метрики",
+  "version": "1.1",
+  "license": "mit",
+  "require": {
+    "mashape/unirest-php": "3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "seoBroweb\\YandexMetrikaApi\\": "src"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 <?php
+namespace seoBroweb;
 /*The MIT License (MIT)
 
 Copyright (c) 2014 webjeyros(webjeyros@gmail.com)
