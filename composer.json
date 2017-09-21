@@ -2,7 +2,6 @@
   "name": "seo-broweb/yandex-metrika-api",
   "description": "Sdk для обращения к апи яндекс метрики",
   "minimum-stability": "dev",
-  "version": "1.0.1",
   "license": "mit",
   "require": {
     "mashape/unirest-php": "3.*"
