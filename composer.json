@@ -10,5 +10,6 @@
     "psr-4": {
       "seoBroweb\\YandexMetrikaApi\\": "src"
     }
+
   }
 }
