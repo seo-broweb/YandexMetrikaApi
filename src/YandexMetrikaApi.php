@@ -36,7 +36,7 @@ class YandexMetrikaApi
 
     public function __construct()
     {
-        ;
+
     }
 
     public function GetOauthToken($code, $client_id, $client_secret, $grant_type = 'authorization_code')
@@ -66,7 +66,6 @@ class YandexMetrikaApi
     {
         $opt = "";
         if ($method === "get") {
-//            ~r('тут');
             foreach ($options as $key => $value)
                 if ($value != null)
                     $opt .= "{$key}={$value}&";
@@ -80,8 +79,6 @@ class YandexMetrikaApi
         } else {
             $ret = Unirest\Request::$method("https://api-metrika.yandex.ru" . $path . ".json?pretty=1", array("Content-Type" => "application/x-yametrika+json", "Authorization" => "OAuth " . $this->access_token, "Accept" => "application/x-yametrika+json", json_encode($options)));
         }
-//        ~r($this->access_token);
-//        ~r($ret);
         if ($ret->code != 200) :
             if (property_exists(json_decode($ret->raw_body), 'errors')) :
                 $errors = $ret->body->errors;
@@ -105,9 +102,9 @@ class YandexMetrikaApi
      * @param string $ulogin Логин пользователя, доверившего управление своими счетчиками пользователю, от имени которого выполняется запрос.
      * @param string $field Один или несколько дополнительных параметров возвращаемого объекта.
      */
-    public function ListCounters($type = null, $permission = null, $ulogin = null, $field = null)
+    public function ListCounters($token, $type = null, $permission = null, $ulogin = null, $field = null) : \stdClass
     {
-        return $this->QueryYandex("get", "/management/v1/counters", array("type" => $type, "permission" => $permission, "ulogin" => $ulogin, "field" => $field));
+        return $this->QueryYandex("get", "/management/v1/counters", array('oauth_token' => $token, "type" => $type, "permission" => $permission, "ulogin" => $ulogin, "field" => $field));
     }
 
     /**
